@@ -29,4 +29,13 @@ class TaskViewModel (application: Application) :
     fun insertTask(task: TaskEntity) = viewModelScope.launch {
         repository.insertTask(task)
     }
+    fun updateTask(task : TaskEntity)= viewModelScope.launch {
+        repository.updateTask(task)
+    }
+    fun deleteAll() = viewModelScope.launch {
+        repository.deleteAll()
+    }
+    fun getTaskById(id : Int): LiveData<TaskEntity>{
+        return repository.getTaskById(id)
+    }
 }

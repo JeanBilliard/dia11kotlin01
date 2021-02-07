@@ -28,4 +28,14 @@ interface TaskDao {
     //traer todos los elementos
     @Query("SELECT * FROM task_table")
     fun  getAllTask() : LiveData<List<TaskEntity>>
+
+    // traer por titulo y limita el resultado a 1
+    @Query("SELECT * FROM task_table WHERE nombre = nombre LIMIT 1")
+    fun getTaskByTitle(nombre : String): LiveData<TaskEntity>
+
+
+    //traer por id
+    @Query("SELECT * FROM task_table WHERE id = :id")
+    fun getTaskById(id: Int): LiveData<TaskEntity>
+
 }

@@ -5,12 +5,13 @@ import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 
 @Entity (tableName = "task_table")
-data class TaskEntity (
+data class TaskEntity(
     @PrimaryKey(autoGenerate = true)
     @NotNull
-    val id: Int=0,
-    val nombre : Int,
-    val cantidad : Int)
+    val id: Int = 0,
+    val nombre : String,
+    val cantidad : String,
+    val precio : String)
 
 
 
