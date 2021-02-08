@@ -44,17 +44,19 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val cantidad = 10
-
-        /*
-        binding.NumberPicker.setOnValueChangedListener(){
+        binding.NumberPicker.setMinValue(1)
+        binding.NumberPicker.setMaxValue(10)
+        /*binding.NumberPicker.setOnValueChangedListener(){
             if (NumberPicker != null) {
-                NumberPicker.setMinValue(1)
-                NumberPicker.setMaxValue(10)
+
                 NumberPicker.warpSelectorWheel = true
 
             }
 
         }*/
+        binding.NumberPicker.setOnValueChangedListener { picker, oldVal, newVal ->
+            Log.d ("picker","${picker.value}")
+        }
 
         binding.edProducto.toString()
 

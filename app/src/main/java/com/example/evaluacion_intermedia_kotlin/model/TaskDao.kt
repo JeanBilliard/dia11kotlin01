@@ -30,7 +30,7 @@ interface TaskDao {
     fun  getAllTask() : LiveData<List<TaskEntity>>
 
     // traer por titulo y limita el resultado a 1
-    @Query("SELECT * FROM task_table WHERE nombre = nombre LIMIT 1")
+    @Query("SELECT * FROM task_table WHERE nombre = :nombre LIMIT 1")
     fun getTaskByTitle(nombre : String): LiveData<TaskEntity>
 
 
